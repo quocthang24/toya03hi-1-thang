@@ -31,7 +31,7 @@ hi('1', '22', '333', '4444') | Hi 1, 22, 333 and 4444!
 
 #region bailam
 def hi(*args, **kwargs):
-  if len(args)==0:  # hi()  --> args = (,)
+  if len(args)==0:  
     if not kwargs:
       return 'Hi!'
     else:
@@ -41,29 +41,29 @@ def hi(*args, **kwargs):
       else:
         return 'Hi!'
 
-  if len(args)==1 and args[0] is None:  # hi(None)  --> args = (None,)
+  if len(args)==1 and args[0] is None:  
     return 'Hi!'
 
-  if len(args)==1:  # hi('Mom') hi('')
+  if len(args)==1:  
     name = args[0]
     if name:
       return f'Hi {name}!'
     else:
       return 'Hi!'
 
-  if len(args)>1:  # hi('Mom', 'Dad')
+  if len(args)>1:  
     namestr = ', '.join(args[0:-1])
     namestr = f'{namestr}, and {args[-1]}'
     return f"Hi {namestr}!"
 
 if __name__=='__main__':
-  print( hi('Mom') )  # Hi Mom!
-  print( hi()      )  # Hi!
-  print( hi(None)  )  # Hi!
+  print( hi('Mom') )  
+  print( hi()      )  
+  print( hi(None)  )  
 
-  print( hi('Mom', 'Dad') )                # Hi Mom, and Dad!
-  print( hi('A', 'B', 'C')  )              # Hi A, B, and C!
-  print( hi('1', '22', '333', '4444')   )  # Hi A, B, and C!
+  print( hi('Mom', 'Dad') )                
+  print( hi('A', 'B', 'C')  )              
+  print( hi('1', '22', '333', '4444')   )  
 
-  print( hi(name='Mom')   )  # Hi Mom!
+  print( hi(name='Mom')   )  
 #endregion bailam
